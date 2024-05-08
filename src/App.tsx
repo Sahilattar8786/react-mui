@@ -1,24 +1,29 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { MuiTextFieldDemo, ToggleButtonDemo } from './Component/ButtonDemo';
+import SelectDemo from './Component/SelectDemo';
+import RadioButtonDemo from './Component/RadioButtonDemo';
+import CheckBoxDemo from './Component/CheckBoxDemo';
+import SwitchDemo from './Component/SwitchDemo';
+import RatingDemo from './Component/RatingDemo';
+import AutoCompleteDemo from './Component/AutoCompleteDemo';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+       <Routes>
+         <Route path='/Toggle' element={<ToggleButtonDemo/>} ></Route>
+         <Route path='/TextField' element={<MuiTextFieldDemo/>}></Route>
+         <Route path='/select' element={<SelectDemo/>}></Route>
+         <Route path='/Radio' element={<RadioButtonDemo/>}></Route>
+         <Route path='/CheckBox'element={<CheckBoxDemo/>}></Route>
+         <Route path='/Switch'element={<SwitchDemo/>}></Route>
+         <Route path='/Rating' element={<RatingDemo/>} ></Route>
+         <Route path='/AutoComplete' element={<AutoCompleteDemo/>} ></Route>
+       </Routes>
+      </BrowserRouter>
     </div>
   );
 }
